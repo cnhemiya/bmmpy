@@ -1,7 +1,7 @@
-# -*- coding:gb18030 -*-
+#encoding=utf-8
 
 def replaceTextByDict(text, strDict):
-    """¸ù¾İstrDictÌá¹©µÄ×Ö·û´®×ÖµäÌæ»»textÎÄ±¾£¬
+    """æ ¹æ®strDictæä¾›çš„å­—ç¬¦ä¸²å­—å…¸æ›¿æ¢textæ–‡æœ¬ï¼Œ
     strDict={ "text_old1":"text_new1", "text_old2":"text_new2"}"""
     result = ""
     if (text != None) and (strDict != None):

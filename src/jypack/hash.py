@@ -1,9 +1,9 @@
-# -*- coding:gb18030 -*-
+#encoding=utf-8
 
 import hashlib
 
 def md5String(text = "", encoding = "gb18030"):
-    """¼ÆËã×Ö·û´®µÄmd5Öµ£¬×Ö·û´®µÄÄ¬ÈÏ±àÂëÊÇgb18030"""
+    """è®¡ç®—å­—ç¬¦ä¸²çš„md5å€¼ï¼Œå­—ç¬¦ä¸²çš„é»˜è®¤ç¼–ç æ˜¯gb18030"""
     md5 = hashlib.md5()
     md5.update(bytearray(text.encode(encoding = encoding)))
     return md5.hexdigest()

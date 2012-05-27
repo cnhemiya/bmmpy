@@ -1,10 +1,10 @@
-# -*- coding:gb18030 -*-
+#encoding=utf-8
 
 import os
 import glob
 
 def findFiles(dirName):
-    """用通配符查找dirName目录中的文件，dirName 例如 c:/*"""
+    """鐢ㄩ�氶厤绗︽煡鎵綿irName鐩綍涓殑鏂囦欢锛宒irName 渚嬪 c:/*"""
     fileList = []
     for fileName in glob.glob(dirName):
         if os.path.isfile(fileName):
@@ -12,13 +12,13 @@ def findFiles(dirName):
     return fileList
 
 def execCmdInFiles(cmd, dirName):
-    """查找dirName目录中的文件并执行cmd命令，dirName 例如 c:/*.zip"""
+    """鏌ユ壘dirName鐩綍涓殑鏂囦欢骞舵墽琛宑md鍛戒护锛宒irName 渚嬪 c:/*.zip"""
     files = findFiles(dirName)
     for f in files:
         os.system(cmd +  "\"" + f + "\"")
 
 def findSubDirs(dirName):
-    """查找dirName目录中的子文件夹"""
+    """鏌ユ壘dirName鐩綍涓殑瀛愭枃浠跺す"""
     dirList = []
     for d in glob.glob(dirName + "/*"):
         if os.path.isdir(d):

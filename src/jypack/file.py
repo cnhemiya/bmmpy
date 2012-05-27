@@ -1,23 +1,23 @@
-# -*- coding:gb18030 -*-
+#encoding=utf-8
 
 import jypack.string
 
 def replaceTextInFile(file, strDict, encoding="gb18030"):
-    """¸ù¾İstrDictÌá¹©µÄ×Ö·û´®×ÖµäÌæ»»ÎÄ¼şÖĞµÄÎÄ±¾£¬
+    """æ ¹æ®strDictæä¾›çš„å­—ç¬¦ä¸²å­—å…¸æ›¿æ¢æ–‡ä»¶ä¸­çš„æ–‡æœ¬ï¼Œ
     strDict={ "text_old1":"text_new1", "text_old2":"text_new2"}"""
     text = readText(file=file, encoding=encoding)
     result = jypack.string.replaceTextByDict(text=text, strDict=strDict)
     writeText(file=file, text=result, encoding=encoding)
 
 def readText(file, encoding="gb18030"):
-    """¶ÁÈ¡ÎÄ¼şµÄËùÓĞÎÄ±¾"""
+    """è¯»å–æ–‡ä»¶çš„æ‰€æœ‰æ–‡æœ¬"""
     f = open(file=file, mode="rt", encoding=encoding)
     result = f.read()
     f.close()
     return result
 
 def writeText(file, text, encoding="gb18030"):
-    """Ğ´ÈëËùÓĞÎÄ±¾µ½ÎÄ¼ş"""
+    """å†™å…¥æ‰€æœ‰æ–‡æœ¬åˆ°æ–‡ä»¶"""
     f = open(file=file, mode="wt", encoding=encoding)
     f.write(text)
     f.close()
