@@ -1,4 +1,4 @@
-#encoding=utf-8
+# -*- coding: utf-8 -*-
 
 def replaceTextByDict(text, strDict):
     """根据strDict提供的字符串字典替换text文本，
