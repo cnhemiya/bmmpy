@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import jypack.jystring
+import jypy.jystring
 
 
 def replaceTextInFile(file, strDict, encoding = "utf-8"):
     """根据strDict提供的字符串字典替换文件中的文本，
     strDict={ "text_old1":"text_new1", "text_old2":"text_new2"}"""
     text = readText(file = file, encoding = encoding)
-    result = jypack.jystring.replaceTextByDict(text = text, strDict = strDict)
+    result = jypy.jystring.replaceTextByDict(text = text, strDict = strDict)
     writeText(file = file, text = result, encoding = encoding)
 
 
