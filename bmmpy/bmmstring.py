@@ -22,3 +22,26 @@ def replace_string_by_dict(string_, str_dict):
     for key in str_dict:
         string_ = string_.replace(key, str_dict[key])
     return string_
+
+
+def str2int_list(str_list: str, sep=",") -> list:
+    """
+    将字符串转换为整型列表。
+
+    参数:
+    str_list: 由整数字符串组成的字符串，例如 "1,2,3,4"
+    sep: 分隔符，默认为逗号 ","
+
+    返回:
+    一个包含整数的列表，例如 [1, 2, 3, 4]
+
+    异常:
+    ValueError: 如果字符串中的任何元素不能转换为整型
+    """
+    int_list = []
+    for item in str_list.split(sep):
+        try:
+            int_list.append(int(item))
+        except ValueError:
+            raise ValueError(f"无法将字符串 '{item}' 转换为整型")
+    return int_list
