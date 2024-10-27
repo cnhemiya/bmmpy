@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*    coding: utf-8 -*-
 
 import subprocess
 import platform
@@ -258,7 +258,7 @@ class AdbUtils:
 
     def batteryInfo(self, args):
         """
-        参数 args（字符串）：
+        Args args（字符串）：
         status：获取电池充电状态
         health：健康状态
         level：电池电量百分比

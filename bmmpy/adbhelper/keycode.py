@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*    coding: utf-8 -*-
 
 UNKNOWN = 0
 SOFT_LEFT = 1
