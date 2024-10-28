@@ -8,7 +8,7 @@ LICENSE  MulanPSL2
 """
 
 
-def replace_string_by_dict(string_, str_dict):
+def replace_string_by_dict(string_: str, str_dict: dict):
     """
     根据提供的字符串字典替换文本
 
@@ -24,7 +24,7 @@ def replace_string_by_dict(string_, str_dict):
     return string_
 
 
-def str2int_list(str_list: str, sep=",") -> list:
+def str2int_list(str_list: str, sep=","):
     """
     将字符串转换为整型列表。
 

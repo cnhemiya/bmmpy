@@ -12,40 +12,40 @@ import glob
 from bmmpy import bmmstring
 
 
-def replace_text_in_file(file, str_dict, encoding="utf-8"):
+def replace_text_in_file(file_path: str, str_dict: dict, encoding="utf-8"):
     """
     根据提供的字符串字典替换文件中的文本
 
     Args:
-        file (str): 要操作的文件路径
+        file_path (str): 要操作的文件路径
         str_dict (dict): 字符串字典，格式为 {"text_old1": "text_new1", "text_old2": "text_new2"}
         encoding (str): 文件编码，默认为 "utf-8"
 
     Returns:
         None
     """
-    text = read_text(file=file, encoding=encoding)
+    text = read_text(file_path=file_path, encoding=encoding)
     result = bmmstring.replace_string_by_dict(text=text, str_dict=str_dict)
-    write_text(file=file, text=result, encoding=encoding)
+    write_text(file=file_path, text=result, encoding=encoding)
 
 
-def read_text(file, encoding="utf-8"):
+def read_text(file_path: str, encoding="utf-8"):
     """
     读取文件的所有文本内容
 
     Args:
-        file (str): 文件路径
+        file_path (str): 文件路径
         encoding (str): 文件编码，默认为 "utf-8"
 
     Returns:
         str: 文件内容
     """
-    with open(file=file, mode="rt", encoding=encoding) as f:
+    with open(file=file_path, mode="rt", encoding=encoding) as f:
         result = f.read()
     return result
 
 
-def write_text(file, text, encoding="utf-8"):
+def write_text(file_path: str, text: str, encoding="utf-8"):
     """
     将文本写入文件
 
@@ -57,11 +57,11 @@ def write_text(file, text, encoding="utf-8"):
     Returns:
         None
     """
-    with open(file=file, mode='wt', encoding=encoding) as f:
+    with open(file=file_path, mode='wt', encoding=encoding) as f:
         f.write(text)
 
 
-def find_files(dir_name):
+def find_files(dir_name: str):
     """
     使用通配符查找目录中的文件
 
@@ -78,7 +78,7 @@ def find_files(dir_name):
     return file_list
 
 
-def exec_cmd_in_files(cmd, dir_name):
+def exec_cmd_in_files(cmd: str, dir_name: str):
     """
     查找目录中的文件并执行命令
 
@@ -94,7 +94,7 @@ def exec_cmd_in_files(cmd, dir_name):
         os.system(cmd + "\"" + f + "\"")
 
 
-def find_sub_dirs(dir_name):
+def find_sub_dirs(dir_name: str):
     """
     查找目录中的子文件夹
 
