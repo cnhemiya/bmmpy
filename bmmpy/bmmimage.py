@@ -13,18 +13,18 @@ import cv2
 
 
 def image_to_edges(image: np.ndarray, user_gray=True, user_blur=True,
-                   ksize=3, sigma=1.0, canny_high=80, canny_low=240) -> np.ndarray:
+                   ksize=3, sigma=1.0, canny_high=50, canny_low=150) -> np.ndarray:
     """
     使用 OpenCV 获取图像的边缘图并返回边缘图。
 
     Args:
-        image (numpy.ndarray): 输入的图像.
-        user_gray (bool, optional): 是否将图像转为灰度图. 默认为 True.
-        user_blur (bool, optional): 是否对图像进行高斯模糊. 默认为 True.
-        ksize (int, optional): 高斯模糊核的大小，必须是奇数. 默认为 3.
-        sigma (float, optional): 高斯模糊的标准差. 默认为 1.0.
-        canny_high (int, optional): Canny 边缘检测的高阈值. 默认为 80.
-        canny_low (int, optional): Canny 边缘检测的低阈值. 默认为 240.
+        image (numpy.ndarray): 输入的图像。
+        user_gray (bool, optional): 是否将图像转为灰度图. 默认为 True。
+        user_blur (bool, optional): 是否对图像进行高斯模糊. 默认为 True。
+        ksize (int, optional): 高斯模糊核的大小，必须是奇数. 默认为 3。
+        sigma (float, optional): 高斯模糊的标准差. 默认为 1.0。
+        canny_high (int, optional): Canny 边缘检测的高阈值. 默认为 50。
+        canny_low (int, optional): Canny 边缘检测的低阈值. 默认为 150。
 
     Returns:
         numpy.ndarray: 输出的边缘图像.
@@ -44,7 +44,7 @@ def image_to_edges(image: np.ndarray, user_gray=True, user_blur=True,
 
 
 def image_to_edges_file(image_path: str, edges_path: str, user_gray=True, user_blur=True,
-                        ksize=3, sigma=1.0, canny_high=80, canny_low=240):
+                        ksize=3, sigma=1.0, canny_high=50, canny_low=150):
     """
     使用 OpenCV 获取图像的边缘图并保存到文件。
 
@@ -54,9 +54,9 @@ def image_to_edges_file(image_path: str, edges_path: str, user_gray=True, user_b
         user_gray (bool, optional): 是否将图像转为灰度图。 默认为 True。
         user_blur (bool, optional): 是否对图像进行高斯模糊。 默认为 True。
         ksize (int, optional): 高斯模糊核的大小，必须是奇数。 默认为 3。
-        sigma (float, optional): 高斯模糊的标准差。 默认为 1。0。
-        canny_high (int, optional): Canny 边缘检测的高阈值。 默认为 80。
-        canny_low (int, optional): Canny 边缘检测的低阈值。 默认为 240。
+        sigma (float, optional): 高斯模糊的标准差。 默认为 1.0。
+        canny_high (int, optional): Canny 边缘检测的高阈值。 默认为 50。
+        canny_low (int, optional): Canny 边缘检测的低阈值。 默认为 150。
 
     Raises:
         ValueError: 如果无法读取图像文件。
