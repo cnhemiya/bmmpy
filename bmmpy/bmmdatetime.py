@@ -8,11 +8,13 @@ LICENSE  MulanPSL2
 """
 
 import datetime
+from typeguard import typechecked
 
 
-def now_time_str():
+@typechecked
+def now_time_str() -> str:
     """
-    获取当前时间，并格式化为字符串
+    获取当前时间，并格式化为字符串。
 
     Returns:
         str: 当前时间的字符串表示，格式为 "YYYY-MM-DD HH:MM:SS"
