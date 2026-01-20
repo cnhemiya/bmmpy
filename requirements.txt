@@ -1,0 +1,7 @@
+# 运行时类型检查
+beartype
+# 基础计算
+numpy
+# 图像处理
+opencv-python
+
